@@ -1,0 +1,23 @@
+name: git.repo.resolve-commit
+description: resolves a git repo commit from a reference
+inputs:
+  dotGitDir:
+    dir:
+      description: git repo .git directory
+      default: ./.git
+  ref:
+    string:
+      description: git reference; symbolic (HEAD, branch, tag) or commit id
+      default: head
+  desiredSHALength:
+    number:
+      constraints: { format: integer, minimum: 4 }
+      description: the desired length of the returned commit SHA; see git rev-parse '--short' opt for details
+      default: 40
+
+run:
+  container:
+    image: { ref: 'alpine/git:1.0.3' }
+    cmd: [ git, rev-parse, --verify, --short=$desiredSHALength, $ref]
+    dirs: { /.git: dotGitDir }
+    workDir: /
