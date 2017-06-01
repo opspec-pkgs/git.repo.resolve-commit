@@ -4,12 +4,12 @@ inputs:
   dotGitDir:
     dir:
       description: git repo .git directory
-      default: ./.git
+      default: .git
   ref:
     string:
       description: git reference; symbolic (HEAD, branch, tag) or commit id
       default: head
-  desiredSHALength:
+  shaLength:
     number:
       constraints: { format: integer, minimum: 4 }
       description: the desired length of the returned commit SHA; see git rev-parse '--short' opt for details
@@ -18,6 +18,6 @@ inputs:
 run:
   container:
     image: { ref: 'alpine/git:1.0.3' }
-    cmd: [ git, rev-parse, --verify, --short=$desiredSHALength, $ref]
+    cmd: [ git, rev-parse, --verify, --short=$(shaLength), $(ref)]
     dirs: { /.git: dotGitDir }
     workDir: /

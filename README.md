@@ -23,5 +23,5 @@ opctl run github.com/opspec-pkgs/git.repo.resolve-commit#VERSION
 run:
   op:
     pkg: { ref: github.com/opspec-pkgs/git.repo.resolve-commit#VERSION }
-    inputs: { dotGitDir, ref, desiredSHALength }
+    inputs: { dotGitDir, ref, shaLength }
 ```
