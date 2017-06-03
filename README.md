@@ -24,4 +24,5 @@ run:
   op:
     pkg: { ref: github.com/opspec-pkgs/git.repo.resolve-commit#VERSION }
     inputs: { dotGitDir, ref, shaLength }
+    outputs: { commit }
 ```

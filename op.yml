@@ -1,4 +1,4 @@
-name: git.repo.resolve-commit
+name: github.com/opspec-pkgs/git.resolve-commit
 description: resolves a git repo commit from a reference
 inputs:
   dotGitDir:
@@ -14,10 +14,24 @@ inputs:
       constraints: { format: integer, minimum: 4 }
       description: the desired length of the returned commit SHA; see git rev-parse '--short' opt for details
       default: 40
-
+outputs:
+  commit:
+    string:
+      description: id (SHA) of the resolved commit
 run:
   container:
-    image: { ref: 'alpine/git:1.0.3' }
-    cmd: [ git, rev-parse, --verify, --short=$(shaLength), $(ref)]
-    dirs: { /.git: dotGitDir }
+    image: { ref: 'opspecpkgs/git.resolve-commit:1.0.0' }
+    cmd:
+      - sh
+      - -ce
+      - |
+        commit=$(git rev-parse --verify --short='$(shaLength)' '$(ref)')
+        echo "commit=$commit"
+    dirs:
+      /.git: dotGitDir
+    envVars:
+      ref:
+      shaLength:
+    stdOut:
+      commit=: commit
     workDir: /
