@@ -8,7 +8,7 @@ inputs:
   ref:
     string:
       description: git reference; symbolic (HEAD, branch, tag) or commit id
-      default: head
+      default: HEAD
   shaLength:
     number:
       constraints: { format: integer, minimum: 4 }
