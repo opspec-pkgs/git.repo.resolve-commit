@@ -24,10 +24,10 @@ run:
   op:
     pkg: { ref: github.com/opspec-pkgs/git.repo.resolve-commit#VERSION }
     inputs: 
-      dotGitDir
+      dotGitDir:
       # begin optional args
-      ref
-      shaLength
+      ref:
+      shaLength:
       # end optional args
     outputs: { commit }
 ```
