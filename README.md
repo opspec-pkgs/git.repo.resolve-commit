@@ -20,16 +20,16 @@ opctl run github.com/opspec-pkgs/git.repo.resolve-commit#VERSION
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/git.repo.resolve-commit#VERSION }
-    inputs: 
-      dotGitDir:
-      # begin optional args
-      ref:
-      shaLength:
-      # end optional args
-    outputs: { commit }
+op:
+  pkg: { ref: github.com/opspec-pkgs/git.repo.resolve-commit#VERSION }
+  inputs: 
+    dotGitDir:
+    # begin optional args
+    ref:
+    shaLength:
+    # end optional args
+  outputs:
+    commit:
 ```
 
 # Support
