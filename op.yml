@@ -18,20 +18,18 @@ outputs:
   commit:
     string:
       description: id (SHA) of the resolved commit
+version: 1.0.1
 run:
   container:
     image: { ref: 'opspecpkgs/git.resolve-commit:1.0.0' }
-    cmd:
-      - sh
-      - -ce
-      - |
-        commit=$(git rev-parse --verify --short='$(shaLength)' '$(ref)')
-        echo "commit=$commit"
+    cmd: [/cmd.sh]
     dirs:
       /.git: dotGitDir
     envVars:
       ref:
       shaLength:
+    files:
+      /cmd.sh:
     stdOut:
       commit=: commit
     workDir: /
