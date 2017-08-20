@@ -21,7 +21,7 @@ outputs:
 version: 1.0.1
 run:
   container:
-    image: { ref: 'opspecpkgs/git.resolve-commit:1.0.0' }
+    image: { ref: 'opspecpkgs/git.resolve-commit:1.0.1' }
     cmd: [/cmd.sh]
     dirs:
       /.git: dotGitDir
