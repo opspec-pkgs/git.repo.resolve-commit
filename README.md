@@ -1,38 +1,40 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/git.resolve-commit.svg?branch=master)](https://travis-ci.org/opspec-pkgs/git.resolve-commit)
 
+<img src="icon.svg" alt="icon" height="100px">
+
 # Problem statement
 
 resolves a git repo commit from a reference
 
+# Format
+
+this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
+
 # Example usage
 
-> note: in examples, VERSION represents a version of the
-> git.repo.resolve-commit pkg
-
-## install
+## Install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/git.repo.resolve-commit#VERSION
+opctl pkg install github.com/opspec-pkgs/git.resolve-commit#1.0.2
 ```
 
-## run
+## Run
 
 ```
-opctl run github.com/opspec-pkgs/git.repo.resolve-commit#VERSION
+opctl run github.com/opspec-pkgs/git.resolve-commit#1.0.2
 ```
 
-## compose
+## Compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/git.repo.resolve-commit#VERSION }
-  inputs: 
+pkg: { ref: github.com/opspec-pkgs/git.resolve-commit#1.0.2 }
+inputs:
+    # params w/ default
     dotGitDir:
-    # begin optional args
     ref:
     shaLength:
-    # end optional args
-  outputs:
+outputs:
     commit:
 ```
 

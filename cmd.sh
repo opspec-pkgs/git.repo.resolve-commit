@@ -2,5 +2,4 @@
 
 set -e
 
-commit=$(git rev-parse --verify --short="${shaLength}" "${ref}")
-echo "commit=${commit}"
+git rev-parse --verify --short="${shaLength}" "${ref}" > /commit
