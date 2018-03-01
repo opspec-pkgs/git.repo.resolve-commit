@@ -2,4 +2,4 @@
 
 set -e
 
-git rev-parse --verify --short="${shaLength}" "${ref}" > /commit
+git rev-parse --verify --short="${shaLength}" "${ref}" | tr -d '\n' > /commit
