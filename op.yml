@@ -25,7 +25,7 @@ run:
     image: { ref: 'opspecpkgs/git.resolve-commit:1.0.2' }
     cmd: [/cmd.sh]
     dirs:
-      /.git: dotGitDir
+      /.git: $(dotGitDir)
     envVars:
       ref:
       shaLength:
