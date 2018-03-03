@@ -28,13 +28,13 @@ opctl run github.com/opspec-pkgs/git.resolve-commit#1.0.2
 
 ```yaml
 op:
-pkg: { ref: github.com/opspec-pkgs/git.resolve-commit#1.0.2 }
-inputs:
+  pkg: { ref: github.com/opspec-pkgs/git.resolve-commit#1.0.2 }
+  inputs:
     # params w/ default
     dotGitDir:
     ref:
     shaLength:
-outputs:
+  outputs:
     commit:
 ```
 
