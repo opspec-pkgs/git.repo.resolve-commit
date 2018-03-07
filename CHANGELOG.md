@@ -5,10 +5,11 @@ All notable changes will be documented in this file in accordance with
 
 ## \[Unreleased]
 
-## \[1.0.2] - 2018-02-25
+## \[1.0.2] - 2018-03-07
 
 ### Changed
 
+- rename from git.resolve-commit to git.repo.resolve-commit
 - commit no longer written to stdOut
 
 ## \[1.0.1] - 2017-08-20

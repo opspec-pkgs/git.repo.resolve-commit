@@ -1,6 +1,5 @@
-name: github.com/opspec-pkgs/git.resolve-commit
+name: github.com/opspec-pkgs/git.repo.resolve-commit
 description: resolves a git repo commit from a reference
-icon: /icon.svg
 inputs:
   dotGitDir:
     dir:
@@ -22,7 +21,7 @@ outputs:
 version: 1.0.2
 run:
   container:
-    image: { ref: 'opspecpkgs/git.resolve-commit:1.0.2' }
+    image: { ref: 'opspecpkgs/git.repo.resolve-commit:1.0.2' }
     cmd: [/cmd.sh]
     dirs:
       /.git: $(dotGitDir)
