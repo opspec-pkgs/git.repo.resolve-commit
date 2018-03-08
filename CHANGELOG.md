@@ -7,6 +7,10 @@ All notable changes will be documented in this file in accordance with
 
 ## \[1.0.2] - 2018-03-07
 
+### Added
+
+- opspec 0.1.6 compatibility
+
 ### Changed
 
 - rename from git.resolve-commit to git.repo.resolve-commit
